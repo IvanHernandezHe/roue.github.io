@@ -2,28 +2,18 @@
 <html lang="es">
   <head>
     <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <title>Roue – Tienda en línea próximamente</title>
-    <meta
-      name="description"
-      content="Roue prepara la mejor experiencia para comprar llantas en línea. Déjanos tu correo para avisarte del lanzamiento y acceso a promociones exclusivas."
-    />
+    <meta name="description" content="Roue prepara la mejor experiencia para comprar llantas en línea. Déjanos tu correo para avisarte del lanzamiento y acceso a promociones exclusivas." />
 
     <!-- Fuente -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Space+Grotesk:wght@500;700&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet" />
 
-    <!-- Logo como favicon (opcional) -->
+    <!-- Favicon / Logo -->
     <link rel="icon" href="assets/roue.jpg" type="image/png" />
-    <!-- Preload del logo para evitar salto de maquetado -->
-    <link rel="preload" as="image" href="assets/roue.jpg" imagesrcset="PATH_A_TU_LOGO.png" />
+    <link rel="preload" as="image" href="assets/roue.jpg" />
 
     <style>
       :root {
@@ -92,7 +82,7 @@
         display: inline-block;
         object-fit: cover;
         box-shadow: 0 6px 16px rgba(15, 18, 30, 0.12);
-        background: #fff; /* por si el PNG tiene transparencia */
+        background: #fff;
       }
       h1 {
         font-family: "Space Grotesk", sans-serif;
@@ -170,11 +160,28 @@
       }
       small { color: var(--brand-muted); }
       footer {
-        padding: clamp(1rem, 3vw, 1.6rem); text-align: center;
-        color: rgba(15, 18, 30, 0.45); font-size: 0.85rem;
+        padding: clamp(1rem, 3vw, 1.6rem);
+        text-align: center;
+        color: rgba(15, 18, 30, 0.45);
+        font-size: 0.85rem;
       }
       footer a { color: var(--brand-primary); font-weight: 600; text-decoration: none; }
       footer a:hover, footer a:focus-visible { text-decoration: underline; }
+      .social {
+        margin-top: .6rem;
+        display: flex;
+        gap: .8rem;
+        justify-content: center;
+      }
+      .social a {
+        display: inline-flex; align-items: center; justify-content: center;
+        width: 40px; height: 40px; border-radius: 999px;
+        background: rgba(15,82,186,.1); color: var(--brand-primary);
+        text-decoration: none;
+        transition: transform 150ms ease, background 150ms ease;
+      }
+      .social a:hover { transform: translateY(-2px); background: rgba(15,82,186,.18); }
+      .social svg { width: 20px; height: 20px; }
       @media (max-width: 620px) {
         header { text-align: center; align-items: center; }
         .lead { max-width: none; }
@@ -182,13 +189,13 @@
       }
     </style>
 
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-KWK22R5M83"></script>
+    <!-- Google tag (gtag.js) - GA4 actualizado -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BYKVRTDXWT"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
+      function gtag(){ dataLayer.push(arguments); }
       gtag('js', new Date());
-      gtag('config', 'G-KWK22R5M83');
+      gtag('config', 'G-BYKVRTDXWT');
     </script>
   </head>
 
@@ -198,7 +205,7 @@
         <!-- Marca con logo + texto -->
         <span class="brand">
           <img
-            src="PATH_A_TU_LOGO.png"
+            src="assets/roue.jpg"
             alt="Roue"
             class="brand-logo"
             width="96"
@@ -287,6 +294,22 @@
         ¿Tienes dudas? Escríbenos a
         <a href="mailto:rouemx@gmail.com">rouemx@gmail.com</a> o envíanos un WhatsApp al
         <a href="https://wa.me/528128700470" target="_blank" rel="noopener">+52 81 2870 0470</a>.
+
+        <!-- Redes sociales -->
+        <div class="social" aria-label="Redes sociales">
+          <a href="https://www.facebook.com/people/Roue-MX/61582856125319/" target="_blank" rel="noopener" aria-label="Facebook">
+            <!-- Facebook SVG -->
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M22 12.07C22 6.48 17.52 2 11.93 2S2 6.48 2 12.07c0 4.99 3.66 9.13 8.44 9.93v-7.03H8.08v-2.9h2.36V9.41c0-2.34 1.4-3.64 3.54-3.64 1.03 0 2.1.18 2.1.18v2.32h-1.18c-1.16 0-1.52.72-1.52 1.46v1.75h2.59l-.41 2.9h-2.18V22c4.78-.8 8.44-4.94 8.44-9.93Z"/>
+            </svg>
+          </a>
+          <a href="https://www.instagram.com/roue.mx/" target="_blank" rel="noopener" aria-label="Instagram">
+            <!-- Instagram SVG -->
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7zm5 3.5A5.5 5.5 0 1 1 6.5 13 5.5 5.5 0 0 1 12 7.5zm0 2A3.5 3.5 0 1 0 15.5 13 3.5 3.5 0 0 0 12 9.5zm5-3.25a1.25 1.25 0 1 1-1.25 1.25A1.25 1.25 0 0 1 17 6.25z"/>
+            </svg>
+          </a>
+        </div>
       </footer>
     </main>
 
@@ -315,7 +338,7 @@
             if (res.ok) {
               if (typeof gtag === 'function') {
                 gtag('event','lead_submit',{
-                  method:'apps_script',
+                  method: 'apps_script',
                   form_location: window.location.pathname || '/',
                   ref_present: document.referrer ? 'yes' : 'no'
                 });
