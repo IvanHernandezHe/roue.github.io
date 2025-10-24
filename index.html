@@ -11,12 +11,20 @@
       name="description"
       content="Roue prepara la mejor experiencia para comprar llantas en línea. Déjanos tu correo para avisarte del lanzamiento y acceso a promociones exclusivas."
     />
+
+    <!-- Fuente -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Space+Grotesk:wght@500;700&display=swap"
       rel="stylesheet"
     />
+
+    <!-- Logo como favicon (opcional) -->
+    <link rel="icon" href="assets/roue.jpg" type="image/png" />
+    <!-- Preload del logo para evitar salto de maquetado -->
+    <link rel="preload" as="image" href="PATH_A_TU_LOGO.png" imagesrcset="PATH_A_TU_LOGO.png" />
+
     <style>
       :root {
         --brand-primary: #0f52ba;
@@ -27,13 +35,10 @@
         --radius-lg: 28px;
         --radius-md: 18px;
       }
-      * {
-        box-sizing: border-box;
-      }
+      * { box-sizing: border-box; }
       body {
         margin: 0;
-        font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont,
-          "Segoe UI", sans-serif;
+        font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
         background: linear-gradient(145deg, #f8faff 0%, #eef4ff 100%);
         color: var(--brand-ink);
         min-height: 100vh;
@@ -58,11 +63,7 @@
         right: -120px;
         width: 420px;
         height: 420px;
-        background: radial-gradient(
-          circle at center,
-          rgba(15, 82, 186, 0.18) 0%,
-          transparent 60%
-        );
+        background: radial-gradient(circle at center, rgba(15, 82, 186, 0.18) 0%, transparent 60%);
         z-index: 0;
       }
       header {
@@ -84,16 +85,14 @@
         color: var(--brand-primary);
         text-transform: uppercase;
       }
-      .brand span {
-        width: 36px;
-        height: 36px;
+      .brand .brand-logo {
+        width: clamp(36px, 6vw, 48px);
+        height: clamp(36px, 6vw, 48px);
         border-radius: 50%;
-        background: var(--brand-primary);
-        color: #fff;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 0.75rem;
+        display: inline-block;
+        object-fit: cover;
+        box-shadow: 0 6px 16px rgba(15, 18, 30, 0.12);
+        background: #fff; /* por si el PNG tiene transparencia */
       }
       h1 {
         font-family: "Space Grotesk", sans-serif;
@@ -138,116 +137,78 @@
         gap: 0.75rem;
         box-shadow: 0 18px 35px -26px rgba(15, 18, 30, 0.28);
       }
-      .card h2 {
-        margin: 0;
-        font-size: 1.1rem;
-        font-weight: 600;
-      }
-      .card p {
-        margin: 0;
-        color: var(--brand-muted);
-        font-size: 0.95rem;
-        line-height: 1.6;
-      }
+      .card h2 { margin: 0; font-size: 1.1rem; font-weight: 600; }
+      .card p { margin: 0; color: var(--brand-muted); font-size: 0.95rem; line-height: 1.6; }
       .icon {
-        width: 36px;
-        height: 36px;
-        border-radius: 10px;
-        background: rgba(15, 82, 186, 0.12);
-        color: var(--brand-primary);
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
+        width: 36px; height: 36px; border-radius: 10px;
+        background: rgba(15, 82, 186, 0.12); color: var(--brand-primary);
+        display: inline-flex; align-items: center; justify-content: center;
         font-size: 1.05rem;
       }
-      form {
-        display: flex;
-        flex-direction: column;
-        gap: 0.75rem;
-      }
-      .input-group {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.6rem;
-      }
+      form { display: flex; flex-direction: column; gap: 0.75rem; }
+      .input-group { display: flex; flex-wrap: wrap; gap: 0.6rem; }
       input[type="email"] {
-        flex: 1 1 230px;
-        padding: 0.85rem 1rem;
-        border-radius: 999px;
-        border: 1px solid var(--brand-border);
-        font-size: 1rem;
+        flex: 1 1 230px; padding: 0.85rem 1rem; border-radius: 999px;
+        border: 1px solid var(--brand-border); font-size: 1rem;
         transition: border-color 180ms ease, box-shadow 180ms ease;
       }
       input[type="email"]:focus-visible {
-        border-color: var(--brand-primary);
-        outline: none;
+        border-color: var(--brand-primary); outline: none;
         box-shadow: 0 0 0 3px rgba(15, 82, 186, 0.18);
       }
       button[type="submit"] {
-        flex: 0 0 auto;
-        padding: 0.9rem 1.6rem;
-        border-radius: 999px;
-        border: none;
-        background: var(--brand-primary);
-        color: #fff;
-        font-weight: 600;
-        letter-spacing: 0.04em;
-        cursor: pointer;
-        transition: background 180ms ease, transform 180ms ease;
+        flex: 0 0 auto; padding: 0.9rem 1.6rem; border-radius: 999px; border: none;
+        background: var(--brand-primary); color: #fff; font-weight: 600; letter-spacing: 0.04em;
+        cursor: pointer; transition: background 180ms ease, transform 180ms ease;
       }
-      button[type="submit"]:hover,
-      button[type="submit"]:focus-visible {
-        background: var(--brand-primary-dark);
-        transform: translateY(-1px);
+      button[type="submit"]:hover, button[type="submit"]:focus-visible {
+        background: var(--brand-primary-dark); transform: translateY(-1px);
       }
       .sr-only {
-        position: absolute;
-        width: 1px;
-        height: 1px;
-        padding: 0;
-        margin: -1px;
-        overflow: hidden;
-        clip: rect(0, 0, 0, 0);
-        border: 0;
-        white-space: nowrap;
+        position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+        overflow: hidden; clip: rect(0, 0, 0, 0); border: 0; white-space: nowrap;
       }
-      small {
-        color: var(--brand-muted);
-      }
+      small { color: var(--brand-muted); }
       footer {
-        padding: clamp(1rem, 3vw, 1.6rem);
-        text-align: center;
-        color: rgba(15, 18, 30, 0.45);
-        font-size: 0.85rem;
+        padding: clamp(1rem, 3vw, 1.6rem); text-align: center;
+        color: rgba(15, 18, 30, 0.45); font-size: 0.85rem;
       }
-      footer a {
-        color: var(--brand-primary);
-        font-weight: 600;
-        text-decoration: none;
-      }
-      footer a:hover,
-      footer a:focus-visible {
-        text-decoration: underline;
-      }
+      footer a { color: var(--brand-primary); font-weight: 600; text-decoration: none; }
+      footer a:hover, footer a:focus-visible { text-decoration: underline; }
       @media (max-width: 620px) {
-        header {
-          text-align: center;
-          align-items: center;
-        }
-        .lead {
-          max-width: none;
-        }
-        .shell::after {
-          top: -220px;
-          right: -220px;
-        }
+        header { text-align: center; align-items: center; }
+        .lead { max-width: none; }
+        .shell::after { top: -220px; right: -220px; }
       }
     </style>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-KWK22R5M83"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-KWK22R5M83');
+    </script>
   </head>
+
   <body>
     <main class="shell">
       <header>
-        <span class="brand"><span>R</span> Roue</span>
+        <!-- Marca con logo + texto -->
+        <span class="brand">
+          <img
+            src="PATH_A_TU_LOGO.png"
+            alt="Roue"
+            class="brand-logo"
+            width="96"
+            height="96"
+            decoding="async"
+            loading="eager"
+          />
+          Roue
+        </span>
+
         <span class="highlight">Próximamente</span>
         <h1>Estamos afinando la mejor experiencia para tu próxima compra de llantas.</h1>
         <p class="lead">
@@ -291,11 +252,18 @@
             Déjanos tu correo y recibirás un mensaje con la fecha de apertura, catálogo destacado y un
             regalo de bienvenida.
           </p>
+
+          <!-- FORMULARIO (Apps Script + GA4 evento) -->
           <form
-            action="https://example.com/form-handler"
-            method="post"
             name="notify"
-          >
+            action="https://script.google.com/macros/s/AKfycbxa5ohMMBMvg9p5kAhksKWTrHo-_jm3qKKaXAcURwDt4Qij7CGFrtJRzr_MllHyIY-m4Q/exec"
+            method="POST"
+            data-lead-form="true">
+            <!-- Campos ocultos para anti-spam y enriquecimiento -->
+            <input type="text" name="_gotcha" style="display:none" />
+            <input type="hidden" name="ua" value="" />
+            <input type="hidden" name="ref" value="" />
+
             <div class="input-group">
               <label class="sr-only" for="email">Correo electrónico</label>
               <input
@@ -317,9 +285,52 @@
 
       <footer>
         ¿Tienes dudas? Escríbenos a
-        <a href="mailto:hola@roue.mx">hola@roue.mx</a> o envíanos un WhatsApp al
-        <a href="https://wa.me/5215555555555" target="_blank" rel="noopener">+52 1 55 5555 5555</a>.
+        <a href="mailto:rouemx@gmail.com">rouemx@gmail.com</a> o envíanos un WhatsApp al
+        <a href="https://wa.me/528128700470" target="_blank" rel="noopener">+52 81 2870 0470</a>.
       </footer>
     </main>
+
+    <script>
+      (function() {
+        const form = document.querySelector('form[data-lead-form="true"]') || document.querySelector('form');
+        if (!form) return;
+
+        // Completa campos ocultos con data útil
+        const uaInput = form.querySelector('input[name="ua"]');
+        const refInput = form.querySelector('input[name="ref"]');
+        if (uaInput) uaInput.value = navigator.userAgent || '';
+        if (refInput) refInput.value = document.referrer || '';
+
+        form.addEventListener('submit', async function(e) {
+          e.preventDefault();
+          const btn = form.querySelector('button[type="submit"], input[type="submit"]');
+          if (btn) { btn.disabled = true; btn.textContent = 'Enviando…'; }
+
+          try {
+            const res = await fetch(form.action, {
+              method: 'POST',
+              body: new FormData(form),
+              headers: { 'Accept': 'application/json' }
+            });
+            if (res.ok) {
+              if (typeof gtag === 'function') {
+                gtag('event','lead_submit',{
+                  method:'apps_script',
+                  form_location: window.location.pathname || '/',
+                  ref_present: document.referrer ? 'yes' : 'no'
+                });
+              }
+              form.innerHTML = '<p style="text-align:center;"><strong>¡Listo!</strong> Te avisaremos cuando lancemos 🎉</p>';
+            } else {
+              throw new Error('Respuesta no OK');
+            }
+          } catch (err) {
+            if (btn) { btn.disabled = false; btn.textContent = 'Avisarme'; }
+            alert('Hubo un problema al registrar tu correo. Intenta de nuevo por favor.');
+            console.error(err);
+          }
+        }, false);
+      })();
+    </script>
   </body>
 </html>
