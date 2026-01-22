@@ -76,13 +76,15 @@
         text-transform: uppercase;
       }
 .brand .brand-logo {
-  width: clamp(90px, 12vw, 140px);
-  aspect-ratio: 16 / 9;
+  height: clamp(36px, 6vw, 48px);
+  width: auto;              /* 👈 se ajusta al ancho real */
+  max-width: 180px;         /* 👈 límite para que no se dispare */
   border-radius: 12px;
   display: inline-block;
-  object-fit: cover;
+  object-fit: contain;      /* 👈 no recorta el logo */
   box-shadow: 0 6px 16px rgba(15, 18, 30, 0.12);
   background: #fff;
+  padding: 6px 10px;        /* opcional: aire alrededor */
 }
       h1 {
         font-family: "Space Grotesk", sans-serif;
